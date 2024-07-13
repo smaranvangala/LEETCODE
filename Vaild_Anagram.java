@@ -3,15 +3,15 @@ class Solution {
     public boolean isAnagram(String s, String t) 
     {   
         Map<Character,Integer> map = new HashMap<>();
-        for(char ch : s.toCharArray())
+        for(char ch : s.toCharArray()) //O(n)
         {
-            map.put(ch,map.getOrDefault(ch,0)+1);
+            map.put(ch,map.getOrDefault(ch,0)+1); //O(1)
         }
-        for(char ch : t.toCharArray())
+        for(char ch : t.toCharArray()) //O(n)
         {
-            map.put(ch,map.getOrDefault(ch,0)-1);
+            map.put(ch,map.getOrDefault(ch,0)-1); //O(1)
         }
-        for(int n : map.values())
+        for(int n : map.values()) //O(n)
         {
             if(n != 0)
             {
@@ -23,6 +23,7 @@ class Solution {
 }
 
 //Array TC- O(n) less space
+// since Alphabets only have 26 characters we can get away with an array
 class Solution {
     public boolean isAnagram(String s, String t) 
     {   
